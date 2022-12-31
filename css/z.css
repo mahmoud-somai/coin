@@ -1,0 +1,270 @@
+/* GOOGLE FONTS  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
+:root {
+    --face: #66be92;
+    --lowlight: #111;
+    --side: #478b3c;
+    --side-dark: #120e08;
+    --coin-size: 300px;
+    --coin-face: url('../assets/logo.png');
+  }
+
+  .coin {
+    height: var(--coin-size);
+    width: var(--coin-size);
+    margin-left: 220px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .coin::before {
+    content: '';
+    display: block;
+    position: relative;
+    height: var(--coin-size);
+    width: var(--coin-size);
+    border-radius: 50%;
+    background-color: var(--face);
+    animation: spin 2s linear infinite;
+    background-image: var(--coin-face);
+    background-size: 100% 100%;
+    background-position: center;
+    background-blend-mode: overlay;
+  }
+  
+  .coin.flip::before {
+    animation-name: flip;
+  }
+  
+
+  
+  /* animation definitions */
+  
+  @keyframes spin {
+    0% {
+      width: var(--coin-size);
+      box-shadow:
+        0 0 0 var(--side-dark);
+      animation-timing-function: ease-in;
+    }
+    
+    49.999% {
+      width: 0.1rem;
+      box-shadow:
+        0.05rem 0 0 var(--side),
+        0.1rem 0 0 var(--side),
+        0.15rem 0 0 var(--side),
+        0.2rem 0 0 var(--side),
+        0.25rem 0 0 var(--side),
+        0.3rem 0 0 var(--side),
+        0.35rem 0 0 var(--side),
+        0.4rem 0 0 var(--side),
+        0.45rem 0 0 var(--side),
+        0.5rem 0 0 var(--side),
+        0.55rem 0 0 var(--side),
+        0.6rem 0 0 var(--side),
+        0.65rem 0 0 var(--side),
+        0.7rem 0 0 var(--side),
+        0.75rem 0 0 var(--side);
+      transform: translateX(-0.375rem);
+      background-color: var(--lowlight);
+      animation-timing-function: linear;
+    }
+    
+    50.001% {
+      width: 0.1rem;
+      box-shadow:
+        -0.05rem 0 0 var(--side),
+        -0.1rem 0 0 var(--side),
+        -0.15rem 0 0 var(--side),
+        -0.2rem 0 0 var(--side),
+        -0.25rem 0 0 var(--side),
+        -0.3rem 0 0 var(--side),
+        -0.35rem 0 0 var(--side),
+        -0.4rem 0 0 var(--side),
+        -0.45rem 0 0 var(--side),
+        -0.5rem 0 0 var(--side),
+        -0.55rem 0 0 var(--side),
+        -0.6rem 0 0 var(--side),
+        -0.65rem 0 0 var(--side),
+        -0.7rem 0 0 var(--side),
+        -0.75rem 0 0 var(--side);
+      transform: translateX(0.375rem);
+      background-color: var(--lowlight);
+      animation-timing-function: ease-out;
+    }
+    
+    100% {
+      width: var(--coin-size);
+      box-shadow:
+        0 0 0 var(--side-dark);
+    }
+  }
+  
+  @keyframes flip {
+    0% {
+      height: var(--coin-size);
+      box-shadow:
+        0 0 0 var(--side-dark);
+      animation-timing-function: ease-in;
+    }
+    
+    49.999% {
+      height: 0.1rem;
+      box-shadow:
+        0 0.05rem 0 var(--side),
+        0 0.1rem 0 var(--side),
+        0 0.15rem 0 var(--side),
+        0 0.2rem 0 var(--side),
+        0 0.25rem 0 var(--side),
+        0 0.3rem 0 var(--side),
+        0 0.35rem 0 var(--side),
+        0 0.4rem 0 var(--side),
+        0 0.45rem 0 var(--side),
+        0 0.5rem 0 var(--side),
+        0 0.55rem 0 var(--side),
+        0 0.6rem 0 var(--side),
+        0 0.65rem 0 var(--side),
+        0 0.7rem 0 var(--side),
+        0 0.75rem 0 var(--side);
+      transform: translateY(-0.375rem);
+      background-color: var(--lowlight);
+      animation-timing-function: linear;
+    }
+    
+    50.001% {
+      height: 0.1rem;
+      box-shadow:
+        0 -0.05rem 0 var(--side),
+        0 -0.1rem 0 var(--side),
+        0 -0.15rem 0 var(--side),
+        0 -0.2rem 0 var(--side),
+        0 -0.25rem 0 var(--side),
+        0 -0.3rem 0 var(--side),
+        0 -0.35rem 0 var(--side),
+        0 -0.4rem 0 var(--side),
+        0 -0.45rem 0 var(--side),
+        0 -0.5rem 0 var(--side),
+        0 -0.55rem 0 var(--side),
+        0 -0.6rem 0 var(--side),
+        0 -0.65rem 0 var(--side),
+        0 -0.7rem 0 var(--side),
+        0 -0.75rem 0 var(--side);
+      transform: translateY(0.375rem);
+      background-color: var(--lowlight);
+      animation-timing-function: ease-out;
+    }
+    
+    100% {
+      height: var(--coin-size);
+      box-shadow:
+        0 0 0 var(--side-dark);
+    }
+  }
+
+
+
+body{
+  background-color:blue;
+  background-image: linear-gradient(to right top, #4a0c4b, #3b3f80, #0069a7, #0092bb, #00b8bf, #00bbae, #2ebd98, #51bd7f, #3fa062, #2c8547, #196a2d, #015014);
+
+
+  background-repeat: no-repeat; 
+    
+}
+
+.col{
+    width: 50%;
+    float: left;
+}
+.left{
+    margin-left: 20px;
+}
+.right{
+    width: 50%;
+}
+
+.banner-content h2{
+    color: #fff;
+    font-size: 52px;
+    max-width: 600px;
+    margin-top: 50px;
+    line-height: 60px;
+}
+.banner-content h2 span{
+    color: #ecb32a;
+}
+.banner-content p{
+    color: #fff;
+    margin-top: 10px;
+    max-width: 500px;
+}
+.recent-blogs{
+    color: #fff;
+    margin-top: 80px;
+    height: 100%;
+}
+.recent-blogs .row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 25px;
+}
+
+.recent-blogs h6{
+    background-color: #ecb32a;
+    display: inline-block;
+    padding: 6px;
+    border-radius: 50px;
+   
+}
+.recent-blogs h2{
+    font-size: 18px;
+    margin-top: 10px;
+    max-width: 300px;
+}
+.recent-blogs p{
+    font-size: 14px;
+    max-width: 300px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.recent-blogs a{
+    color: #ecb32a;
+}
+
+  
+
+@media (max-width: 768px) {
+    .col {
+      flex: 100%; /* Set the width of the column to 100% */
+    }
+  
+    /* Set the order of the columns */
+    .col:first-child {
+      order: 1; /* Set the order of the first col to 1 */
+    }
+    .col:last-child {
+      order: -1; /* Set the order of the last col to -1 */
+    }
+  }
+  
+  /* Add a media query for phones */
+  @media (max-width: 600px) {
+
+  
+    /* Set the order of the cols */
+    .col:first-child {
+      order: 1; /* Set the order of the first col to 1 */
+
+    }
+    .col:last-child {
+      order: -1; /* Set the order of the last col to -1 */
+      
+      
+    }
+  }
